@@ -36,6 +36,6 @@ jobs:
       - name: Installing Surge
         run: npm install --global surge
       - name: Deploying Using Surge
-        run: surge ./ http://superficial-snail.surge.sh/ --token ${{secret.Surge_Token}}
+        run: surge ./ superficial-snail.surge.sh --token ${{secrets.Surge_Token}}
           echo Add other actions to build,
           echo test, and deploy your project.
