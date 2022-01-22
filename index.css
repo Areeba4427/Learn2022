@@ -1,12 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
-*{
-    margin:0;
- 
-    padding:0;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 .navbar-top {
     display: flex;
@@ -14,6 +15,7 @@
     justify-content: center;
     position: fixed;
     width:100%;
+    height:10%;
     top: 0;
     cursor: pointer;
 
@@ -34,11 +36,13 @@ padding:12px;
 .nav-list li a{
     text-decoration: none;
     color:whitesmoke;
-    font-weight: 500;
+    font-weight: 800;
+    font-size: 25px;
 }
 .nav-list li a:hover{
     text-decoration: none;
-    color:gray;
+    color:brown;
+    font-size: 30px;
 }
 .right-nav{
     width: 50%;
@@ -47,57 +51,45 @@ padding:12px;
     padding:0 23px;
 
 }
-.logo{
-    width:25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     padding-bottom: 5px; 
-    padding-top: 5px;
-}
-.logo img{
-    width:70%;
-    border:solid white;
-    border-radius: 100px;
-    
-}
-
-.search{
-    padding:5px;
-    font-size: 15px;
-    border:2px solid gray;
-    border-radius: 20px;
-
+.right-nav p{
+    font-size:20px;
+    color:whitesmoke;
+    font-weight: 30px;
 }
 
 .background{
 
-    background:rgba(0,0,0,0.7) url("C:\Users\Areeba Saleem\Documents\GitHub\Learn2022\images\image1.jpg");
+    background:rgba(0,0,0,0.9) url("C:\Users\Areeba Saleem\Documents\GitHub\Learn2022\images\image1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    
     background-blend-mode: darken;
 }
 
-
+.part-2{
+    background-image: url('./images/pastel.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
 .box-main{
+    
     display:flex;
     justify-content: center;
     align-items: center;
-    color:beige;
+    color:black;
     font-size: 12px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     max-width:100%;
+   
     margin: auto;
-
-    height:80%;
+    height:555px;
 }
 .firsthalf{
-width:100%;
+width:60%;
 display: flex;
 flex-direction: column;
 padding-right: 320px;
-padding-top: 10%;
 justify-content: center;
 }
 
@@ -109,6 +101,7 @@ width:40%;
 .firstSection{
 height: 100vh;
 }
+
 .sechalf img{
     width:90%;
     padding:4px 0;
@@ -122,35 +115,21 @@ height: 100vh;
 
 .textbig{
     width:100%;
-    font-size: 38px;
+    font-size: 45px;
     flex-wrap:nowrap;
 }
 
 
 .textsmall{
-    font-size: 15px;
+    font-family: Heebo,sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    font-size: 20px;
+    width:100%;
     /* padding-top: 2px; */
 }
 
-.btn1 , .btn2 , .btnsm{
 
-    padding: 8px 20px;
-    margin:10px 5px;
-    border:2px solid whitesmoke;
-    border-radius: 5px;
-    font-size: 12px;
-    cursor: pointer;
-    /* background-color: black; */
-    color:whitesmoke;
-    background: none;
-}
-.btnsm{
-    padding:5px 10px;
-    margin: 5px 5px;
-    vertical-align: middle;
-
-
-}
 .secright{
 
     height:500px;
@@ -184,3 +163,65 @@ height: 100vh;
 p{
     font-family: 'Ubuntu', sans-serif;
 }
+.block-effect {
+    font-size:calc(8px + 6vw);
+  }
+  
+  .block-reveal {
+    --t: calc(var(--td) + var(--d));
+  
+    color: transparent;
+    padding: 4px;
+  
+    position: relative;
+    overflow: hidden;
+  
+    animation: revealBlock 0s var(--t) forwards;
+  }
+  
+  .block-reveal::after {
+    content: '';
+  
+    width: 0%;
+    height: 100%;
+    padding-bottom: 4px;
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+    background: var(--bc);
+    animation: revealingIn var(--td) var(--d) forwards, revealingOut var(--td) var(--t) forwards;
+  }
+  
+  
+  /* animations */
+  @keyframes revealBlock {
+    100% {
+      color: white;
+    }
+  }
+  
+  @keyframes revealingIn {
+  
+    0% {
+      width: 0;
+    }
+  
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes revealingOut {
+  
+    0% {
+      transform: translateX(0);
+    }
+  
+    100% {
+      transform: translateX(100%);
+    }
+  
+  }
+  
